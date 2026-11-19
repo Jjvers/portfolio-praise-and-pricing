@@ -16,6 +16,8 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Desain 3D, 2D, render & animasi SolidWorks. Konsultasi gratis via WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://3bsdesign.vercel.app/3bs-logo.png" },
+      { name: "twitter:image", content: "https://3bsdesign.vercel.app/3bs-logo.png" },
     ],
   }),
   component: Index,
