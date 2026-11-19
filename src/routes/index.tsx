@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const nav = [["tentang", "Tentang"], ["layanan", "Layanan"], ["portofolio", "Portofolio"], ["pricelist", "Pricelist"], ["testimoni", "Testimoni"], ["kontak", "Kontak"]];
+const nav = [["tentang", "Tentang"], ["layanan", "Layanan"], ["portofolio", "Portofolio"], ["pricelist", "Pricelist"], ["keunggulan", "Keunggulan"], ["testimoni", "Testimoni"], ["kontak", "Kontak"]];
 
 function H({ children, big }: { children: React.ReactNode; big?: boolean }) {
   return <div className="sec-head"><h2 className={`uppercase ${big ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"} font-normal`}>{children}</h2></div>;
@@ -94,7 +94,7 @@ function Index() {
       <div aria-hidden className="absolute bottom-0 right-3 top-0 w-[1.5px] bg-line md:right-6" />
       <header className="sticky top-0 z-20 flex items-center justify-between gap-4 bg-background/95 py-3.5 pr-6 backdrop-blur">
         <a href="#top" aria-label="3BS Design" className="bg-background p-1"><img src={logo.url} alt="3BS Design" className="h-8 w-auto" /></a>
-        <nav className="flex gap-5 md:gap-7">{nav.map(([id, l]) => (
+        <nav className="flex gap-5 md:gap-6">{nav.map(([id, l]) => (
           <a key={id} href={`#${id}`} className={`text-xs font-medium uppercase tracking-widest underline-offset-4 hover:underline ${id === "kontak" ? "" : "hidden lg:inline"}`}>{l}</a>
         ))}</nav>
       </header>
