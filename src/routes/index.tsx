@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 const LOGO = "/3bs-logo.png";
+const MAIL = "mailto:3bs.desain@gmail.com?subject=Konsultasi%20gambar%20teknik%20SolidWorks&body=Halo%203BS%20Design%2C%20saya%20mau%20tanya%20soal%20jasa%20gambar%20teknik.";
 
 const WA = "6282135000237";
 const wa = (t: string) => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
@@ -25,7 +26,7 @@ const nav = [["tentang", "Tentang"], ["layanan", "Layanan"], ["portofolio", "Por
 function H({ children, big }: { children: React.ReactNode; big?: boolean }) {
   return <div className="sec-head"><h2 className={`uppercase ${big ? "text-2xl md:text-3xl" : "text-xl md:text-2xl"} font-normal`}>{children}</h2></div>;
 }
-function Row({ a, b }: { a: string; b: string }) {
+function Row({ a, b }: { a: string; b: React.ReactNode }) {
   return <div className="flex justify-between gap-4 border-b border-border py-2.5 text-sm md:text-lg"><span className="uppercase">{a}</span><span className="whitespace-nowrap font-normal">{b}</span></div>;
 }
 function Grid({ head, rows }: { head: string[]; rows: (string | undefined)[][] }) {
@@ -198,9 +199,9 @@ function Index() {
           <div className="flex flex-wrap gap-3">
             <a className="btn-solid" href={wa("Halo 3BS Design, saya mau konsultasi gambar teknik.")} target="_blank" rel="noopener">WhatsApp</a>
             <a className="btn-line" href="https://www.tiktok.com/@3bs_design" target="_blank" rel="noopener">TikTok</a>
-            <a className="btn-line" href="mailto:3bs.desain@gmail.com">Email</a>
+            <a className="btn-line" href={MAIL}>Email</a>
           </div>
-          <div className="mt-8"><Row a="WhatsApp" b="0821 3500 0237" /><Row a="TikTok" b="@3bs_design" /><Row a="Email" b="3bs.desain@gmail.com" /></div>
+          <div className="mt-8"><Row a="WhatsApp" b="0821 3500 0237" /><Row a="TikTok" b="@3bs_design" /><Row a="Email" b={<a className="underline" href={MAIL}>3bs.desain@gmail.com</a>} /></div>
         </section>
       </main>
 
