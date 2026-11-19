@@ -28,12 +28,12 @@ function H({ children, big }: { children: React.ReactNode; big?: boolean }) {
 function Row({ a, b }: { a: string; b: string }) {
   return <div className="flex justify-between gap-4 border-b border-border py-2.5 text-sm md:text-lg"><span className="uppercase">{a}</span><span className="whitespace-nowrap font-normal">{b}</span></div>;
 }
-function Grid({ head, rows }: { head: string[]; rows: string[][] }) {
+function Grid({ head, rows }: { head: string[]; rows: (string | undefined)[][] }) {
   const cols = { gridTemplateColumns: `repeat(${head.length}, minmax(0,1fr))` };
   return (
     <div className="text-sm md:text-lg">
       <div className="grid border-b border-border py-2 text-xs font-medium uppercase tracking-wider text-muted-foreground" style={cols}>{head.map((h, i) => <span key={h} className={i ? "text-right" : ""}>{h}</span>)}</div>
-      {rows.map((r) => <div key={r[0]} className="grid border-b border-border py-2.5" style={cols}>{r.map((c, i) => <span key={i} className={i ? "text-right" : "uppercase"}>{c}</span>)}</div>)}
+      {rows.map((r) => <div key={String(r[0])} className="grid border-b border-border py-2.5" style={cols}>{r.map((c, i) => <span key={i} className={i ? "text-right" : "uppercase"}>{c}</span>)}</div>)}
     </div>
   );
 }
