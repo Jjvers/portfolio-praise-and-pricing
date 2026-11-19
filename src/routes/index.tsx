@@ -147,7 +147,7 @@ function Index() {
         <section id="pricelist" className="pt-20 md:pt-28">
           <h2 className="mb-12 font-display text-5xl uppercase md:text-8xl">Price list</h2>
           <div className="space-y-16">
-            <div><H>3D Modeling</H>{[["Part Created (Custom) – Simple", "Rp5.000 / part"], ["Part Created (Custom) – Medium", "Rp10.000 / part"], ["Part Created (Custom) – Advance", "Rp20.000 / part"]].map(([a, b]) => <Row key={a} a={a} b={b} />)}</div>
+            <div><H>3D Modeling</H>{[["Part Created (Custom) – Simple", "Rp5.000 / part"], ["Part Created (Custom) – Medium", "Rp10.000 / part"], ["Part Created (Custom) – Advance", "Rp20.000 / part"]].map(([a, b]) => <Row key={a} a={a!} b={b!} />)}</div>
             <div><H>Assembly</H>{[10, 20, 30, 40, 50].map((n) => <Row key={n} a={`≤ ${n} Part`} b={rp(n * 1000)} />)}<Note t="Lebih dari 50 part dikenakan tambahan Rp10.000 setiap kelipatan 10 part." /></div>
             <div><H>2D Drawing (CAD)</H><Row a="2D Drawing" b="Rp5.000 / sheet" /></div>
             <div>
