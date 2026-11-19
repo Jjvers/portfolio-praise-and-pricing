@@ -30,6 +30,9 @@
  */
 
 @theme inline {
+  --font-sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Roboto Slab", Georgia, serif;
+  --color-line: var(--line);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -73,7 +76,8 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0;
+  --line: oklch(0.38 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -153,3 +157,23 @@
     color: var(--color-foreground);
   }
 }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { font-family: var(--font-sans); font-weight: 300; }
+@utility sec-head {
+  position: relative; border-bottom: 1.5px solid var(--line); padding-bottom: 10px; margin-bottom: 24px;
+  &::after { content: ""; position: absolute; right: -8px; bottom: -8.5px; width: 15px; height: 15px; border-radius: 50%; background: var(--background); border: 1.5px solid var(--line); }
+}
+@utility btn-line {
+  display: inline-flex; align-items: center; gap: .5rem; padding: 13px 26px; border: 1.5px solid var(--foreground);
+  font-weight: 500; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; transition: all .2s;
+  &:hover { background: var(--foreground); color: var(--background); }
+}
+@utility btn-solid {
+  display: inline-flex; align-items: center; gap: .5rem; padding: 13px 26px; border: 1.5px solid var(--foreground);
+  background: var(--foreground); color: var(--background);
+  font-weight: 500; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; transition: all .2s;
+  &:hover { background: var(--background); color: var(--foreground); }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
+@utility animate-rise { animation: rise .8s ease-out both; }
