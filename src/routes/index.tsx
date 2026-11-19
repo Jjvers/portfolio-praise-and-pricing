@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 const LOGO = "/3bs-logo.png";
-const MAIL = "mailto:3bs.desain@gmail.com?subject=Konsultasi%20gambar%20teknik%20SolidWorks&body=Halo%203BS%20Design%2C%20saya%20mau%20tanya%20soal%20jasa%20gambar%20teknik.";
+const MAIL = "https://mail.google.com/mail/?view=cm&fs=1&to=3bs.desain@gmail.com&su=Konsultasi%20gambar%20teknik%20SolidWorks&body=Halo%203BS%20Design%2C%20saya%20mau%20tanya%20soal%20jasa%20gambar%20teknik.";
 
 const WA = "6282135000237";
 const wa = (t: string) => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
@@ -199,9 +199,9 @@ function Index() {
           <div className="flex flex-wrap gap-3">
             <a className="btn-solid" href={wa("Halo 3BS Design, saya mau konsultasi gambar teknik.")} target="_blank" rel="noopener">WhatsApp</a>
             <a className="btn-line" href="https://www.tiktok.com/@3bs_design" target="_blank" rel="noopener">TikTok</a>
-            <a className="btn-line" href={MAIL}>Email</a>
+            <a className="btn-line" href={MAIL} target="_blank" rel="noopener noreferrer">Email</a>
           </div>
-          <div className="mt-8"><Row a="WhatsApp" b="0821 3500 0237" /><Row a="TikTok" b="@3bs_design" /><Row a="Email" b={<a className="underline" href={MAIL}>3bs.desain@gmail.com</a>} /></div>
+          <div className="mt-8"><Row a="WhatsApp" b="0821 3500 0237" /><Row a="TikTok" b="@3bs_design" /><Row a="Email" b={<a className="underline" href={MAIL} target="_blank" rel="noopener noreferrer">3bs.desain@gmail.com</a>} /></div>
         </section>
       </main>
 
