@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import logo from "@/assets/3bs-logo.asset.json";
+const LOGO = "/3bs-logo.png";
 
 const WA = "6282135000237";
 const wa = (t: string) => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
@@ -93,7 +93,7 @@ function Index() {
     <div className="relative mx-auto max-w-6xl px-5 md:pl-24 md:pr-10">
       <div aria-hidden className="absolute bottom-0 right-3 top-0 w-[1.5px] bg-line md:right-6" />
       <header className="sticky top-0 z-20 flex items-center justify-between gap-4 bg-background/95 py-3.5 pr-6 backdrop-blur">
-        <a href="#top" aria-label="3BS Design" className="bg-background p-1"><img src={logo.url} alt="3BS Design" className="h-8 w-auto" /></a>
+        <a href="#top" aria-label="3BS Design" className="bg-background p-1"><img src={LOGO} alt="3BS Design" className="h-8 w-auto" /></a>
         <nav className="flex gap-5 md:gap-6">{nav.map(([id, l]) => (
           <a key={id} href={`#${id}`} className={`text-xs font-medium uppercase tracking-widest underline-offset-4 hover:underline ${id === "kontak" ? "" : "hidden lg:inline"}`}>{l}</a>
         ))}</nav>
@@ -205,7 +205,7 @@ function Index() {
       </main>
 
       <footer className="flex flex-col items-end gap-2 pb-16 pr-8 pt-24 text-right md:pr-16">
-        <img src={logo.url} alt="3BS Design" className="h-11 w-auto" />
+        <img src={LOGO} alt="3BS Design" className="h-11 w-auto" />
         <p className="text-sm italic text-muted-foreground">From Ideas to 3D Models.</p>
         <p className="text-sm text-muted-foreground">© 2026 3BS Design (Tiga Bersinergi)</p>
       </footer>
