@@ -65,8 +65,8 @@ const speeds = [["Normal (≥3 hari)", 0], ["Express (2 hari)", 0.1], ["Urgent (
 
 function Calculator() {
   const [d, setD] = useState(0); const [g, setG] = useState(0); const [s, setS] = useState(0);
-  const base = durations[d][1] * grades[g][1];
-  const total = Math.round(base * (1 + speeds[s][1]));
+  const base = durations[d]![1] * grades[g]![1];
+  const total = Math.round(base * (1 + speeds[s]![1]));
   const Pick = ({ items, v, set }: { items: readonly (readonly [string | number, number])[]; v: number; set: (n: number) => void }) => (
     <div className="flex flex-wrap gap-2">{items.map((it, i) => (
       <button key={i} onClick={() => set(i)} className={`border px-3 py-1.5 text-xs uppercase tracking-wider transition ${v === i ? "border-foreground bg-foreground text-background" : "border-border hover:border-foreground"}`}>{typeof it[0] === "number" ? `≤ ${it[0]} detik` : it[0]}</button>
@@ -82,7 +82,7 @@ function Calculator() {
       </div>
       <div className="mt-6 flex flex-wrap items-end justify-between gap-4 border-t border-border pt-5">
         <div><p className="text-xs uppercase text-muted-foreground">Estimasi total</p><p className="font-display text-4xl">{rp(total)}</p></div>
-        <a className="btn-solid" target="_blank" rel="noopener" href={wa(`Halo 3BS Design, saya mau order animasi ≤${durations[d][0]} detik, kualitas ${grades[g][0]}, deadline ${speeds[s][0]}. Estimasi ${rp(total)}.`)}>Order via WhatsApp →</a>
+        <a className="btn-solid" target="_blank" rel="noopener" href={wa(`Halo 3BS Design, saya mau order animasi ≤${durations[d]![0]} detik, kualitas ${grades[g]![0]}, deadline ${speeds[s]![0]}. Estimasi ${rp(total)}.`)}>Order via WhatsApp →</a>
       </div>
     </div>
   );
